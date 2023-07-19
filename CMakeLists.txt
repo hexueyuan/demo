@@ -34,4 +34,7 @@ set(DYNAMIC_LIB ${DYNAMIC_LIB}
         "-Wl,-U,_ProfilerStart"
         "-Wl,-U,_ProfilerStop")
 
+add_subdirectory(third-party/butil)
+target_include_directories(butil PUBLIC third-party/butil/src)
+
 add_subdirectory(src)

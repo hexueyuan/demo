@@ -9,6 +9,8 @@ add_custom_command(
     DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/echo.proto)
 include_directories(${PROTO_SOURCE_DIR})
 
+set(CMAKE_CPP_FLAGS "${CMAKE_CPP_FLAGS} -Wno-deprecated-declarations")
+
 add_executable(test2 ${CMAKE_CURRENT_SOURCE_DIR}/main.cpp ${PROTO_SOURCE_DIR}/echo.pb.cc)
 install(TARGETS test2
         RUNTIME DESTINATION ${PROJECT_OUTOUT_BIN_DIR}
