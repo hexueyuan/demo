@@ -19,7 +19,8 @@ set(WORKROOT "/Users/hexueyuan/Workroot/CPPRELEASE")
 include_directories(${WORKROOT}/include)
 link_directories(${WORKROOT}/lib)
 
-set(CMAKE_CXX_STANDARD 17) # C++17
+#set(CMAKE_CXX_STANDARD 17) # C++17
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17")
 set(CMAKE_OSX_ARCHITECTURES "arm64")
 
 set(DYNAMIC_LIB ${DYNAMIC_LIB}
@@ -35,6 +36,16 @@ set(DYNAMIC_LIB ${DYNAMIC_LIB}
         "-Wl,-U,_ProfilerStop")
 
 add_subdirectory(third-party/butil)
+include_directories(third-party/butil/src)
 target_include_directories(butil PUBLIC third-party/butil/src)
 
-add_subdirectory(src)
+add_subdirectory(third-party/bthread)
+include_directories(third-party/bthread/src)
+target_include_directories(bthread PUBLIC third-party/bthread/src)
+
+include_directories(third-party/Boost)
+
+add_subdirectory(src/test1)
+add_subdirectory(src/test2)
+add_subdirectory(src/test3)
+add_subdirectory(src/test_bthread)
