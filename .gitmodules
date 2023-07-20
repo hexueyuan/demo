@@ -1,6 +1,3 @@
-[submodule "third-party/butil"]
-	path = third-party/butil
-	url = git@github.com:hexueyuan/butil.git
-[submodule "third-party/bthread"]
-	path = third-party/bthread
-	url = git@github.com:hexueyuan/bthread.git
+[submodule "third-party/ccom"]
+	path = third-party/ccom
+	url = git@github.com:hexueyuan/ccom.git

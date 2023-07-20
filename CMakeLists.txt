@@ -35,15 +35,9 @@ set(DYNAMIC_LIB ${DYNAMIC_LIB}
         "-Wl,-U,_ProfilerStart"
         "-Wl,-U,_ProfilerStop")
 
-add_subdirectory(third-party/butil)
-include_directories(third-party/butil/src)
-target_include_directories(butil PUBLIC third-party/butil/src)
-
-add_subdirectory(third-party/bthread)
-include_directories(third-party/bthread/src)
-target_include_directories(bthread PUBLIC third-party/bthread/src)
-
-include_directories(third-party/Boost)
+add_subdirectory(third-party/ccom)
+include_directories(third-party/ccom/src)
+link_directories(${PROJECT_SOURCE_DIR}/third-party/ccom/lib)
 
 add_subdirectory(src/test1)
 add_subdirectory(src/test2)
